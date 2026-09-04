@@ -194,15 +194,17 @@ body {
 
 .project-card {
     background: var(--card);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 24px;
+    padding: 22px 24px;
     transition: var(--transition);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .project-card:hover {
     background: var(--card-hover);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-header {
@@ -347,17 +349,33 @@ details[open] .summary-chevron {
 }
 
 /* 2. EXPERIENCE */
+.experience-list {
+    display: grid;
+    gap: 16px;
+}
+
 .experience-card {
     background: var(--card);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 24px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     transition: var(--transition);
 }
 
 .experience-card:hover {
     background: var(--card-hover);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.exp-category-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .exp-header {
@@ -366,18 +384,44 @@ details[open] .summary-chevron {
     align-items: baseline;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 
 .exp-title {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: #ffffff;
 }
 
+.exp-role {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.exp-lead {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-top: 12px;
+}
+
+.exp-lead a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--border-hover);
+    transition: var(--transition);
+}
+
+.exp-lead a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+}
+
 .exp-period {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     color: var(--muted);
 }
 
@@ -391,7 +435,7 @@ details[open] .summary-chevron {
     position: relative;
     padding-left: 16px;
     color: var(--text-secondary);
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     line-height: 1.55;
 }
 
@@ -413,9 +457,10 @@ details[open] .summary-chevron {
 
 .education-card {
     background: var(--card);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 22px 24px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
@@ -424,7 +469,8 @@ details[open] .summary-chevron {
 
 .education-card:hover {
     background: var(--card-hover);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .edu-main h3 {
@@ -450,15 +496,17 @@ details[open] .summary-chevron {
 /* 4. ABOUT & SKILLS */
 .about-card {
     background: var(--card);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 24px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     transition: var(--transition);
 }
 
 .about-card:hover {
     background: var(--card-hover);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .about-text {
@@ -708,18 +756,19 @@ details[open] .summary-chevron {
                     </summary>
                     <div class="details-content">
                         <div class="detail-block">
-                            <h4>Инфраструктура и протокол</h4>
+                            <h4>Архитектура и Backend API</h4>
                             <ul>
-                                <li>Безопасная валидация `initData` Telegram WebApp по HMAC-SHA256 подписи бота.</li>
-                                <li>Отказоустойчивое проксирование через Nginx со сжатием gzip и SSL-терминацией.</li>
-                                <li>Минимизация накладных расходов при передаче состояния игрового поля и инвентаря.</li>
+                                <li>Проектирование REST API для взаимодействия SPA-клиента с сервером под управлением Nginx.</li>
+                                <li>Безопасная валидация авторизационных данных Telegram WebApp (`initData`) по HMAC-SHA256 подписи бота.</li>
+                                <li>Структурированная схема базы данных с контролем целостности игровых сущностей и балансов.</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>Особенности реализации</h4>
+                            <h4>Серверная логика и интеграции</h4>
                             <ul>
-                                <li>Атомарные транзакции при операциях покупки, обновления активов и распределения наград.</li>
-                                <li>Адаптивная отрисовка интерфейса под мобильный клиент Telegram и десктопные платформы.</li>
+                                <li>Реализация транзакционной серверной логики: покупка недвижимости, апгрейды, начисление наград.</li>
+                                <li>Интеграция со сторонними сервисами и платежными механизмами внутри Telegram Mini Apps.</li>
+                                <li>Командная разработка: разделение ответственности, версионирование API и синхронизация контрактов с фронтендом.</li>
                             </ul>
                         </div>
                     </div>
@@ -778,19 +827,40 @@ details[open] .summary-chevron {
     <section class="section reveal">
         <h2 class="section-title">Опыт работы</h2>
 
-        <div class="experience-card">
-            <div class="exp-header">
-                <div class="exp-title">Яндекс — Картограф</div>
-                <div class="exp-period">Март 2024 — настоящее время</div>
+        <div class="experience-list">
+            <!-- Commercial experience -->
+            <div class="experience-card">
+                <div class="exp-category-title">Коммерческий опыт</div>
+                <div class="exp-header">
+                    <div class="exp-title">Яндекс</div>
+                    <div class="exp-period">Март 2024 — настоящее время</div>
+                </div>
+                <div class="exp-role">Картограф</div>
+                <ul class="exp-list">
+                    <li>Работа с геоданными</li>
+                    <li>Дорожная сеть</li>
+                    <li>Пространственные данные</li>
+                    <li>Контроль качества данных</li>
+                    <li>Пользовательская обратная связь</li>
+                    <li>Государственные источники данных</li>
+                </ul>
             </div>
-            <ul class="exp-list">
-                <li>Работа с геоданными</li>
-                <li>Дорожная сеть</li>
-                <li>Пространственные данные</li>
-                <li>Контроль качества данных</li>
-                <li>Пользовательская обратная связь</li>
-                <li>Государственные источники данных</li>
-            </ul>
+
+            <!-- Project experience -->
+            <div class="experience-card">
+                <div class="exp-category-title">Проектный опыт</div>
+                <div class="exp-header">
+                    <div class="exp-title">MNPL (Monopoly Mini App)</div>
+                </div>
+                <div class="exp-role">Backend Developer</div>
+                <ul class="exp-list">
+                    <li>Участие в разработке Telegram Mini App в составе команды.</li>
+                    <li>Работа над backend-функциональностью, интеграциями сервисов и развитием продукта.</li>
+                </ul>
+                <div class="exp-lead">
+                    Руководитель проекта: <a href="https://egorqqa.github.io/" target="_blank" rel="noopener noreferrer">Егор Мельников</a>
+                </div>
+            </div>
         </div>
     </section>
 
