@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOneK — Backend / Fullstack Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0d0d0d;
+    --card:#141414;
+    --text:#f5f5f5;
+    --muted:#8b8b8b;
+    --border:#242424;
+    --accent:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:clamp(72px,12vw,140px);
+    font-weight:800;
+    line-height:0.95;
+    margin-bottom:20px;
+}
+
+.hero .subtitle{
+    font-size:clamp(20px,3vw,32px);
+    color:var(--muted);
+    margin-bottom:30px;
+}
+
+.hero p{
+    max-width:720px;
+    font-size:20px;
+    color:#cfcfcf;
+}
+
+.meta{
+    margin-top:32px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.meta span{
+    border:1px solid var(--border);
+    padding:10px 16px;
+    border-radius:999px;
+    color:#d7d7d7;
+}
+
+.section{
+    padding:120px 0;
+    border-top:1px solid var(--border);
+}
+
+.section-grid{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:60px;
+}
+
+.section-number{
+    font-size:120px;
+    font-weight:800;
+    color:#1d1d1d;
+    line-height:1;
+}
+
+.section h2{
+    font-size:48px;
+    margin-bottom:32px;
+}
+
+.about{
+    max-width:850px;
+    font-size:20px;
+    color:#d5d5d5;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:40px;
+}
+
+.skill{
+    border:1px solid var(--border);
+    padding:12px 18px;
+    border-radius:999px;
+    color:#d9d9d9;
+}
+
+.cards{
+    display:grid;
+    gap:24px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:32px;
+    border-radius:24px;
+    transition:.2s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#333;
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#cfcfcf;
+}
+
+.stack{
+    margin-top:18px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.timeline-item{
+    padding-left:28px;
+    border-left:2px solid var(--border);
+}
+
+.period{
+    color:var(--muted);
+    margin-bottom:10px;
+}
+
+.education-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.footer{
+    padding:120px 0;
+    border-top:1px solid var(--border);
+}
+
+.contacts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.contacts a{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+}
+
+.contacts a:hover{
+    opacity:.7;
+}
+
+@media(max-width:900px){
+
+    .section-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .section-number{
+        font-size:72px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:120px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero">
+    <div>
+        <h1>Ярослав Виноградов</h1>
+
+        <div class="subtitle">
+            Backend / Fullstack Developer · GIS Specialist
+        </div>
+
+        <p>
+            Разрабатываю веб-приложения, Telegram-ботов и сервисы автоматизации.
+            Работаю с геоданными в Яндексе, интересуюсь архитектурой приложений,
+            AI-системами и созданием продуктов полного цикла.
+        </p>
+
+        <div class="meta">
+            <span>24 года</span>
+            <span>Санкт-Петербург</span>
+            <span>Python</span>
+            <span>GIS</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-grid">
+
+        <div class="section-number">01</div>
+
+        <div>
+            <h2>О себе</h2>
+
+            <div class="about">
+                Backend и Fullstack-разработчик с опытом создания Telegram-ботов,
+                веб-приложений, AI-сервисов и инструментов автоматизации.
+                Более двух лет работаю с цифровыми картографическими данными,
+                пространственной информацией и контролем качества геоданных.
+
+                Интересуюсь архитектурой ПО, LLM-системами,
+                Telegram Mini Apps и разработкой сервисов,
+                которые решают реальные задачи.
+            </div>
+
+            <div class="skills">
+                <div class="skill">Python</div>
+                <div class="skill">FastAPI</div>
+                <div class="skill">PostgreSQL</div>
+                <div class="skill">SQLAlchemy</div>
+                <div class="skill">Docker</div>
+                <div class="skill">TypeScript</div>
+                <div class="skill">Telegram Bot API</div>
+                <div class="skill">RAG</div>
+                <div class="skill">LLM</div>
+                <div class="skill">GIS</div>
+                <div class="skill">OpenStreetMap</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-grid">
+
+        <div class="section-number">02</div>
+
+        <div>
+
+            <h2>Проекты</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>ChatBot Platform</h3>
+                    <p>
+                        Платформа AI-ассистента с поддержкой LLM, RAG,
+                        управления промптами, хранения контекста и миграций БД.
+                    </p>
+                    <div class="stack">
+                        Python · PostgreSQL · SQLAlchemy · Alembic · LLM · RAG
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Monopoly Mini App</h3>
+                    <p>
+                        Telegram Mini App с backend API,
+                        веб-клиентом и инфраструктурой деплоя.
+                    </p>
+                    <div class="stack">
+                        Telegram Mini Apps · API · Nginx
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Contract Generator</h3>
+                    <p>
+                        Сервис автоматической генерации документов
+                        с тестированием, кэшированием и разделением логики по слоям.
+                    </p>
+                    <div class="stack">
+                        Python · Clean Architecture · Pytest
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Player</h3>
+                    <p>
+                        Современный веб-плеер с адаптивным интерфейсом
+                        и компонентной архитектурой.
+                    </p>
+                    <div class="stack">
+                        TypeScript · SPA · Frontend
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-grid">
+
+        <div class="section-number">03</div>
+
+        <div>
+
+            <h2>Опыт</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="period">
+                        Март 2024 — настоящее время
+                    </div>
+
+                    <h3>Яндекс · Картограф</h3>
+
+                    <p>
+                        Работа с цифровыми картографическими данными,
+                        дорожной сетью, адресной информацией и объектами
+                        инфраструктуры. Контроль качества геоданных,
+                        анализ пространственной информации и работа
+                        с официальными источниками данных.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-grid">
+
+        <div class="section-number">04</div>
+
+        <div>
+
+            <h2>Образование</h2>
+
+            <div class="education-card">
+                <h3>Волгоградский государственный университет</h3>
+                <div class="period">2020 — 2024</div>
+                <p>Бакалавр · Картография и геоинформатика</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Санкт-Петербургский горный университет</h3>
+                <div class="period">2024 — 2026</div>
+                <p>Магистр · Землеустройство и кадастры</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="footer">
+
+    <h2>Контакты</h2>
+
+    <div class="contacts">
+        <a href="https://github.com/MOneK292">GitHub</a>
+        <a href="https://t.me/likenoneother">Telegram</a>
+        <a href="https://hh.ru/resume/e0555865ff110e60710039ed1f345264724343">HH.ru</a>
+    </div>
+
+</section>
+</div>
+
+</body>
+</html>
